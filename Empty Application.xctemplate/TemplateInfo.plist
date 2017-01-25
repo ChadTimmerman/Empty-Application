@@ -40,17 +40,39 @@ return YES;
 				<dict>
 					<key>Definitions</key>
 					<dict>
+						<key>MainViewController.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>MainViewController.swift</string>
+						</dict>
+						<key>../Podfile</key>
+						<string>source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target '___PACKAGENAME___' do
+
+end
+						</string>
 						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
 						<string>self.window = UIWindow(frame: UIScreen.main.bounds)
 // Override point for customization after application launch.
 
-self.window!.rootViewController = UIViewController()
+let viewController:MainViewController = MainViewController()
+let navController:UINavigationController = UINavigationController(rootViewController: viewController)
+self.window!.rootViewController = navController
+
 self.window!.backgroundColor = UIColor.white</string>
 						<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:return</key>
 						<string>self.window!.makeKeyAndVisible()
 return true
 </string>
 					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>MainViewController.swift</string>
+						<string>../Podfile</string>
+					</array>
 				</dict>
 			</dict>
 		</dict>
